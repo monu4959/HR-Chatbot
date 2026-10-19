@@ -22,6 +22,7 @@ load_dotenv()
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from agent.llm import get_llm
+from tools.counts import ranked_counts
 from agent.prompt_engine import PANDAS_FALLBACK_PROMPT
 
 DATA_PATH = os.getenv("DATA_PATH", "./data/annotated_results.csv")
@@ -216,7 +217,7 @@ def _superlative(df: pd.DataFrame, q: str) -> str | None:
         return None
     for key, col, label in _SUPERLATIVE_DIMENSIONS:
         if key in q:
-            counts = df[col].value_counts().sort_values(ascending=(direction == "fewest"), kind="stable")
+            counts = ranked_counts(df[col], ascending=(direction == "fewest"))
             name, n = counts.index[0], int(counts.iloc[0])
             lines = "\n".join(f"  - {k}: {v}" for k, v in counts.head(5).items())
             return (f"The {label} with the {direction} recognitions is '{name}' ({n}).\n"
@@ -237,7 +238,7 @@ def _group_totals(df: pd.DataFrame, q: str) -> str | None:
     for wanted, col, verb in [(give, "nominator_title", "gives"), (receive, "recipient_title", "receives")]:
         if not wanted:
             continue
-        counts = titled[col].map(classify_role).value_counts()
+        counts = ranked_counts(titled[col].map(classify_role))
         lines  = "\n".join(f"  - {k}: {v}" for k, v in counts.items())
         parts.append(f"The role group that {verb} the most recognitions is '{counts.index[0]}' ({int(counts.iloc[0])}).\n"
                      f"Recognitions {'given' if verb == 'gives' else 'received'} by role group "
@@ -255,7 +256,7 @@ def _count_for_label(df: pd.DataFrame, q: str) -> str | None:
             continue
         rows = df[df[col] == label]
         if col == "category_name" and "subcategor" in q:
-            subs = rows["subcategory_name"].value_counts()
+            subs = ranked_counts(rows["subcategory_name"])
             lines = "\n".join(f"  - {s}: {c}" for s, c in subs.items())
             return f"'{label}' has {len(subs)} subcategories:\n{lines}"
         if any(w in q for w in _COUNT_WORDS):
@@ -328,7 +329,7 @@ def pandas_query(question: str) -> str:
         return "Subcategories:\n" + "\n".join(f"  - {s}" for s in sorted(subs))
 
     if "subcategor" in q and any(w in q for w in breakdown_words):
-        counts = df["subcategory_name"].value_counts()
+        counts = ranked_counts(df["subcategory_name"])
         result = "Recognition count by subcategory:\n"
         for sub, count in counts.items():
             result += f"  - {sub}: {count}\n"
@@ -344,7 +345,7 @@ def pandas_query(question: str) -> str:
         return "Categories:\n" + "\n".join(f"  - {c}" for c in cats)
 
     if "categor" in q and any(w in q for w in breakdown_words):
-        counts = df["category_name"].value_counts()
+        counts = ranked_counts(df["category_name"])
         result = f"Recognition count by category (total: {len(df)}):\n"
         for cat, count in counts.items():
             pct = round(count / len(df) * 100, 1)
@@ -405,14 +406,14 @@ def pandas_query(question: str) -> str:
 
     if any(w in q for w in ["most common award", "top award", "popular award",
                              "most used award", "award distribution"]):
-        counts = df["award_title"].value_counts().head(15)
+        counts = ranked_counts(df["award_title"]).head(15)
         result = "Most common award titles:\n"
         for title, count in counts.items():
             result += f"  - {title}: {count}\n"
         return result
 
     if any(w in q for w in ["list award", "all award", "what award"]):
-        counts = df["award_title"].value_counts().head(20)
+        counts = ranked_counts(df["award_title"]).head(20)
         result = f"Top 20 award titles (out of {df['award_title'].nunique()} unique):\n"
         for title, count in counts.items():
             result += f"  - {title}: {count}\n"
@@ -420,14 +421,14 @@ def pandas_query(question: str) -> str:
 
     # ── Job titles ────────────────────────────────────────────────────────────
     if _MOST_NOMINATING.search(q):
-        counts = df["nominator_title"].value_counts().head(10)
+        counts = ranked_counts(df["nominator_title"]).head(10)
         result = "Top 10 nominator job titles:\n"
         for title, count in counts.items():
             result += f"  - {title}: {count}\n"
         return result
 
     if _MOST_RECOGNIZED.search(q):
-        counts = df["recipient_title"].value_counts().head(10)
+        counts = ranked_counts(df["recipient_title"]).head(10)
         result = "Top 10 most recognized job titles:\n"
         for title, count in counts.items():
             result += f"  - {title}: {count}\n"
@@ -445,14 +446,14 @@ def pandas_query(question: str) -> str:
 
     if any(w in q for w in ["list job title", "list role", "all job title",
                              "list recipient", "all recipient"]):
-        titles = df["recipient_title"].value_counts().head(20)
+        titles = ranked_counts(df["recipient_title"]).head(20)
         result = f"Top 20 recipient job titles (out of {df['recipient_title'].nunique()} unique):\n"
         for title, count in titles.items():
             result += f"  - {title}: {count}\n"
         return result
 
     if any(w in q for w in ["list nominator", "all nominator"]):
-        titles = df["nominator_title"].value_counts().head(20)
+        titles = ranked_counts(df["nominator_title"]).head(20)
         result = f"Top 20 nominator job titles (out of {df['nominator_title'].nunique()} unique):\n"
         for title, count in titles.items():
             result += f"  - {title}: {count}\n"

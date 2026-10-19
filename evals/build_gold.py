@@ -26,6 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from tools.graph_tool import classify_role
+from tools.counts import ranked_counts
 
 DATA_PATH = Path(os.getenv("DATA_PATH", ROOT / "data" / "annotated_results.csv"))
 OUT_DIR   = ROOT / "evals" / "dataset"
@@ -53,14 +54,14 @@ def _case(case_id, question, route, check, gold, difficulty="easy"):
 
 
 def _top(series: pd.Series, n: int = 1) -> list[dict]:
-    return [{"label": k, "value": int(v)} for k, v in series.value_counts().head(n).items()]
+    return [{"label": k, "value": int(v)} for k, v in ranked_counts(series).head(n).items()]
 
 
 def build_cases(df: pd.DataFrame) -> list[dict]:
     cases = []
     total = len(df)
-    cat_counts = df["category_name"].value_counts()
-    sub_counts = df["subcategory_name"].value_counts()
+    cat_counts = ranked_counts(df["category_name"])
+    sub_counts = ranked_counts(df["subcategory_name"])
 
     # ── pandas_query: counts ───────────────────────────────────────────────────
     cases.append(_case("pd-total", "How many recognitions are in the dataset in total?",
@@ -134,7 +135,7 @@ def build_cases(df: pd.DataFrame) -> list[dict]:
         "from": titled["nominator_title"].map(classify_role),
         "to":   titled["recipient_title"].map(classify_role),
     })
-    cross = groups[groups["from"] != groups["to"]].value_counts().head(3)
+    cross = ranked_counts(groups[groups["from"] != groups["to"]]).head(3)
     cases.append(_case("gr-top-flow", "Which departments recognize each other most?",
                        "graph_query", "top_label",
                        {"label": f"{cross.index[0][0]} → {cross.index[0][1]}", "value": int(cross.iloc[0]),
@@ -164,8 +165,8 @@ def build_heldout_cases(df: pd.DataFrame) -> list[dict]:
 
     cases = []
     total = len(df)
-    cat_counts = df["category_name"].value_counts()
-    sub_counts = df["subcategory_name"].value_counts()
+    cat_counts = ranked_counts(df["category_name"])
+    sub_counts = ranked_counts(df["subcategory_name"])
 
     cases.append(held("ho-share-strategic", "What share of all recognitions fall under Strategic Business Outcomes?",
                       "pandas_query", "numeric",
@@ -210,8 +211,8 @@ def build_heldout_cases(df: pd.DataFrame) -> list[dict]:
                       {"chart_type": "horizontal_bar", "data": {k: int(v) for k, v in sub_counts.items()}}))
 
     titled = df.dropna(subset=["nominator_title", "recipient_title"])
-    givers    = titled["nominator_title"].map(classify_role).value_counts()
-    receivers = titled["recipient_title"].map(classify_role).value_counts()
+    givers    = ranked_counts(titled["nominator_title"].map(classify_role))
+    receivers = ranked_counts(titled["recipient_title"].map(classify_role))
     cases.append(held("ho-gr-top-giver", "Which role group gives out the most recognitions?",
                       "graph_query", "top_label", {"label": givers.index[0], "value": int(givers.iloc[0])}, difficulty="medium"))
     cases.append(held("ho-gr-top-receiver", "Which group of roles receives the most recognitions overall?",
@@ -255,8 +256,8 @@ def main():
     facts = {
         "data_hash":        data_hash,
         "rows":             len(df),
-        "categories":       {k: int(v) for k, v in df["category_name"].value_counts().items()},
-        "subcategories":    {k: int(v) for k, v in df["subcategory_name"].value_counts().items()},
+        "categories":       {k: int(v) for k, v in ranked_counts(df["category_name"]).items()},
+        "subcategories":    {k: int(v) for k, v in ranked_counts(df["subcategory_name"]).items()},
         "unique_awards":    int(df["award_title"].nunique()),
         "unique_recipients": int(df["recipient_title"].nunique()),
         "unique_nominators": int(df["nominator_title"].nunique()),

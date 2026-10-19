@@ -15,6 +15,7 @@ from agent.graph import run_query, get_agent, clear_session
 from agent.cache import cache_stats, clear as clear_cache
 from tools.rag_tool import _get_collection
 from tools.graph_tool import _get_driver
+from tools.counts import ranked_counts
 
 app = FastAPI(
     title="Recognition Analytics Agent",
@@ -137,7 +138,7 @@ def dataset_summary():
         df        = pd.read_csv(data_path)
         return {
             "total_rows":              len(df),
-            "categories":              df["category_name"].value_counts().to_dict(),
+            "categories":              ranked_counts(df["category_name"]).to_dict(),
             "subcategory_count":       int(df["subcategory_name"].nunique()),
             "unique_recipient_titles": int(df["recipient_title"].nunique()),
             "unique_award_titles":     int(df["award_title"].nunique()),

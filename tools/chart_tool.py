@@ -6,6 +6,8 @@ from langchain_core.tools import tool
 from functools import lru_cache
 from dotenv import load_dotenv
 
+from tools.counts import ranked_counts
+
 load_dotenv()
 
 DATA_PATH = os.getenv("DATA_PATH", "./data/annotated_results.csv")
@@ -84,7 +86,7 @@ def chart_generator(question: str) -> str:
         chart_type = default_type
 
     n      = _top_n(q) or default_n
-    counts = df[column].value_counts()
+    counts = ranked_counts(df[column])
     if n:
         counts = counts.head(n)
     data = [{"label": k, "value": int(v)} for k, v in counts.items()]

@@ -22,6 +22,8 @@ from functools import lru_cache
 from langchain_core.tools import tool
 from dotenv import load_dotenv
 
+from tools.counts import ranked_counts
+
 load_dotenv()
 
 DATA_PATH        = os.getenv("DATA_PATH",        "./data/annotated_results.csv")
@@ -182,7 +184,7 @@ def _nx_bridges(n: int = 10) -> list:
 def _nx_totals(direction: str, n: int = 10) -> list:
     edges = _load_edges()
     col = "nom_g" if direction == "given" else "rec_g"
-    return list(edges[col].value_counts().head(n).items())
+    return list(ranked_counts(edges[col]).head(n).items())
 
 
 # ── Main tool ─────────────────────────────────────────────────────────────────

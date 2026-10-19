@@ -234,3 +234,10 @@ def test_comparison_questions_are_not_answered_as_plain_unique_counts():
 
 def test_bare_role_title_gets_similar_roles():
     assert "Roles Most Similar to 'Senior Director'" in prof.profile_and_replace.invoke({"query": "Senior Director"})
+
+
+def test_ranked_counts_breaks_ties_alphabetically():
+    from tools.counts import ranked_counts
+    s = pd.Series(["b", "a", "c", "a", "b", "d"])
+    assert list(ranked_counts(s).items()) == [("a", 2), ("b", 2), ("c", 1), ("d", 1)]
+    assert list(ranked_counts(s, ascending=True).items()) == [("c", 1), ("d", 1), ("a", 2), ("b", 2)]
