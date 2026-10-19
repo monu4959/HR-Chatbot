@@ -1,4 +1,9 @@
 langgraph==1.1.4
+# langgraph's own sub-packages must match it; unpinned, pip installs a newer langgraph-prebuilt that
+# needs a newer langgraph (ImportError: ServerInfo) — that broke the first CI run
+langgraph-prebuilt==1.0.8
+langgraph-checkpoint==4.0.1
+langgraph-sdk==0.3.12
 langchain==1.2.14
 langchain-core==1.2.24
 langchain-openai==1.1.12
