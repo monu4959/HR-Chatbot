@@ -1,0 +1,151 @@
+{
+  "split": "holdout",
+  "grader_model": "claude-haiku-5-5",
+  "n_labelled": 43,
+  "results": {
+    "keyword_checks vs correct": {
+      "n": 43,
+      "accuracy": 0.907,
+      "kappa": 0.805,
+      "fail_recall": 0.882,
+      "pass_recall": 0.923,
+      "fail_precision": 0.882,
+      "confusion": {
+        "caught_bad": 15,
+        "passed_good": 24,
+        "failed_good": 2,
+        "missed_bad": 2
+      },
+      "errors": 0
+    },
+    "old_grader vs faithful": {
+      "n": 43,
+      "accuracy": 0.814,
+      "kappa": 0.631,
+      "fail_recall": 0.739,
+      "pass_recall": 0.9,
+      "fail_precision": 0.895,
+      "confusion": {
+        "caught_bad": 17,
+        "passed_good": 18,
+        "failed_good": 2,
+        "missed_bad": 6
+      },
+      "errors": 0
+    },
+    "old_grader vs correct": {
+      "n": 43,
+      "accuracy": 0.674,
+      "kappa": 0.333,
+      "fail_recall": 0.647,
+      "pass_recall": 0.692,
+      "fail_precision": 0.579,
+      "confusion": {
+        "caught_bad": 11,
+        "passed_good": 18,
+        "failed_good": 8,
+        "missed_bad": 6
+      },
+      "errors": 0
+    },
+    "faithfulness_v1 vs faithful": {
+      "n": 43,
+      "accuracy": 0.884,
+      "kappa": 0.764,
+      "fail_recall": 0.957,
+      "pass_recall": 0.8,
+      "fail_precision": 0.846,
+      "confusion": {
+        "caught_bad": 22,
+        "passed_good": 16,
+        "failed_good": 4,
+        "missed_bad": 1
+      },
+      "errors": 0
+    },
+    "correctness_v1 vs correct": {
+      "n": 42,
+      "accuracy": 0.929,
+      "kappa": 0.854,
+      "fail_recall": 1.0,
+      "pass_recall": 0.885,
+      "fail_precision": 0.842,
+      "confusion": {
+        "caught_bad": 16,
+        "passed_good": 23,
+        "failed_good": 3,
+        "missed_bad": 0
+      },
+      "errors": 1
+    },
+    "faithfulness vs faithful": {
+      "n": 43,
+      "accuracy": 0.907,
+      "kappa": 0.812,
+      "fail_recall": 0.957,
+      "pass_recall": 0.85,
+      "fail_precision": 0.88,
+      "confusion": {
+        "caught_bad": 22,
+        "passed_good": 17,
+        "failed_good": 3,
+        "missed_bad": 1
+      },
+      "errors": 0
+    },
+    "correctness vs correct": {
+      "n": 43,
+      "accuracy": 0.953,
+      "kappa": 0.905,
+      "fail_recall": 1.0,
+      "pass_recall": 0.923,
+      "fail_precision": 0.895,
+      "confusion": {
+        "caught_bad": 17,
+        "passed_good": 24,
+        "failed_good": 2,
+        "missed_bad": 0
+      },
+      "errors": 0
+    }
+  },
+  "labels": {
+    "blind": 24,
+    "reviewed": 76,
+    "reviewed_changed": 0,
+    "draft_vs_blind_human": {
+      "faithful": {
+        "n": 24,
+        "accuracy": 0.958,
+        "kappa": 0.917,
+        "fail_recall": 0.917,
+        "pass_recall": 1.0,
+        "fail_precision": 1.0,
+        "confusion": {
+          "caught_bad": 11,
+          "passed_good": 12,
+          "failed_good": 0,
+          "missed_bad": 1
+        }
+      },
+      "correct": {
+        "n": 24,
+        "accuracy": 0.958,
+        "kappa": 0.915,
+        "fail_recall": 1.0,
+        "pass_recall": 0.929,
+        "fail_precision": 0.909,
+        "confusion": {
+          "caught_bad": 10,
+          "passed_good": 13,
+          "failed_good": 1,
+          "missed_bad": 0
+        }
+      }
+    }
+  },
+  "perturbation_sanity": {
+    "n": 10,
+    "human_marked_unfaithful": 10
+  }
+}

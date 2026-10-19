@@ -1,0 +1,29 @@
+{
+  "note": "The 24 items labelled with no Claude suggestion shown (10 faithfulness calls re-checked by the labeller after labelling). All other items are human-reviewed Claude drafts (mode 'reviewed' in labels.jsonl).",
+  "item_ids": [
+    "baseline_llama3.2-3b:pd-cat-3",
+    "baseline_llama3.2-3b:pd-fallback-eng-share",
+    "baseline_llama3.2-3b:pd-n-subcategories",
+    "baseline_llama3.2-3b:pd-sub-4",
+    "baseline_llama3.2-3b:prof-replace-emma",
+    "baseline_llama3.2-3b:prof-unknown-name",
+    "baseline_llama3.2-3b:sem-mentor",
+    "baseline_qwen2.5-7b:gr-central",
+    "baseline_qwen2.5-7b:pd-cat-3",
+    "baseline_qwen2.5-7b:pd-fallback-eng-share",
+    "baseline_qwen2.5-7b:pd-sub-4",
+    "baseline_qwen2.5-7b:pd-total",
+    "baseline_qwen2.5-7b:sem-mentor",
+    "baseline_qwen2.5-7b:syn-leaders-vs-peers",
+    "fixed_llama3.2-3b:pd-sub-3",
+    "fixed_qwen2.5-7b:oos-2",
+    "fixed_qwen2.5-7b:pd-cat-0",
+    "fixed_qwen2.5-7b:pd-cat-1",
+    "fixed_qwen2.5-7b:pd-cat-breakdown",
+    "fixed_qwen2.5-7b:prof-unknown-name",
+    "perturb-claim:sem-deadline:baseline_llama3.2-3b",
+    "perturb-number:pd-cat-1:fixed_qwen2.5-7b",
+    "perturb-number:pd-n-awards:baseline_qwen2.5-7b",
+    "perturb-number:pd-sub-3:fixed_qwen2.5-7b"
+  ]
+}

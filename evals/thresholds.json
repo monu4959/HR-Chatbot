@@ -1,0 +1,13 @@
+{
+  "min_answer_pass_rate": 0.85,
+  "min_route_accuracy": 0.95,
+  "max_errors": 0,
+  "max_drop_vs_baseline": 0.05,
+  "max_route_drop_vs_baseline": 0.15,
+  "min_route_n": 3,
+  "must_pass_checks": [
+    "refusal"
+  ],
+  "min_judge_correct_rate": 0.85,
+  "min_judge_faithful_rate": 0.85
+}

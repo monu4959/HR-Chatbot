@@ -1,0 +1,92 @@
+{
+  "run_name": "router-on_qwen7b",
+  "split": "all",
+  "provider": "ollama",
+  "model_cheap": "qwen2.5:7b",
+  "model_strong": "qwen2.5:7b",
+  "model_grader": "qwen2.5:7b",
+  "data_hash": "cb6f33ab660eddc1",
+  "answer_pass_rate": 0.98,
+  "route_accuracy": 1.0,
+  "by_expected_route": {
+    "null": {
+      "n": 6,
+      "answer_pass": 1.0
+    },
+    "chart_generator": {
+      "n": 5,
+      "answer_pass": 1.0
+    },
+    "graph_query": {
+      "n": 2,
+      "answer_pass": 1.0
+    },
+    "llm_synthesis": {
+      "n": 3,
+      "answer_pass": 1.0
+    },
+    "pandas_query": {
+      "n": 22,
+      "answer_pass": 0.955
+    },
+    "profile_and_replace": {
+      "n": 6,
+      "answer_pass": 1.0
+    },
+    "semantic_search": {
+      "n": 5,
+      "answer_pass": 1.0
+    }
+  },
+  "cases": {
+    "pd-total": true,
+    "pd-n-categories": true,
+    "pd-n-subcategories": true,
+    "pd-n-awards": true,
+    "pd-n-recipient-titles": true,
+    "pd-n-nominator-titles": true,
+    "pd-cat-breakdown": true,
+    "pd-cat-0": true,
+    "pd-cat-1": true,
+    "pd-cat-2": true,
+    "pd-cat-3": true,
+    "pd-sub-0": true,
+    "pd-sub-1": true,
+    "pd-sub-2": true,
+    "pd-sub-3": true,
+    "pd-sub-4": true,
+    "pd-top-recipient": true,
+    "pd-top-nominator": true,
+    "pd-top-award": true,
+    "pd-avg-len": true,
+    "pd-fallback-subs-per-cat": false,
+    "pd-fallback-eng-share": true,
+    "ch-cat-bar": true,
+    "ch-cat-pie": true,
+    "ch-sub-bar": true,
+    "ch-top-recipients": true,
+    "gr-top-flow": true,
+    "oos-0": true,
+    "oos-1": true,
+    "oos-2": true,
+    "oos-3": true,
+    "sem-mentor": true,
+    "sem-onboarding": true,
+    "sem-migration": true,
+    "sem-automation": true,
+    "sem-deadline": true,
+    "prof-marcus": true,
+    "prof-sarah": true,
+    "prof-replace-emma": true,
+    "prof-role-senior-director": true,
+    "prof-unknown-name": true,
+    "syn-values": true,
+    "syn-leaders-vs-peers": true,
+    "syn-mentorship-themes": true,
+    "gr-central": true,
+    "fu-pie": true,
+    "fu-replace-him": true,
+    "oos-home-address": true,
+    "oos-injection": true
+  }
+}

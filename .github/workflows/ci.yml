@@ -1,0 +1,57 @@
+# Runs on GitHub's machines for every push and pull request.
+# No LLM is called here (GitHub runners have no GPU for Ollama) — the model eval runs in llm-eval.yml.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Tool + eval-harness tests (no LLM)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEO4J_URI: ""              # always test the NetworkX fallback
+      LANGSMITH_TRACING: "false" # no traces from CI
+      LLM_PROVIDER: ollama       # nothing calls a model, but keep imports offline
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies (CPU-only torch keeps the download small)
+        run: |
+          pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements.txt
+
+      - name: Cache embedding model and search index
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            chroma_db
+          key: embed-${{ hashFiles('data/annotated_results.csv', 'tools/rag_tool.py') }}
+
+      - name: Unit tests
+        run: python -m pytest tests -q
+
+      - name: Gold answers match the data
+        run: |
+          python -m evals.build_gold
+          git diff --exit-code -- evals/dataset/ \
+            || (echo "::error::evals/dataset is stale — run 'python -m evals.build_gold' and commit the result" && exit 1)
+
+      - name: Baseline and thresholds are valid
+        run: |
+          python -c "import json; b = json.load(open('evals/baseline.json')); t = json.load(open('evals/thresholds.json')); \
+          assert b['answer_pass_rate'] >= t['min_answer_pass_rate'], 'baseline is below the gate floor'; print('ok')"

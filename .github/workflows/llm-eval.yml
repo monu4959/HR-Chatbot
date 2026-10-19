@@ -1,0 +1,109 @@
+# Full LLM eval + regression gate (python -m evals.run --gate). Never runs on every push:
+# start it from the Actions tab (LLM eval → Run workflow), or add the label "run-evals" to a PR.
+#
+# provider = anthropic (default): runs on GitHub's machines. Needs repo secrets
+#   ANTHROPIC_API_KEY (required) and LANGSMITH_API_KEY (optional, for traces).
+#   Every run calls the Claude API and costs money.
+#
+# provider = ollama: runs on a self-hosted runner with Ollama (your laptop).
+#   Setup: Settings → Actions → Runners → New self-hosted runner, add the label "ollama", and set
+#   RUNNER_ENV_FILE on that machine to the path of a .env (see .env.example).
+#   SECURITY: only use a self-hosted runner on a PRIVATE repository — on a public repo anyone can
+#   open a pull request that runs code on your machine.
+name: LLM eval
+
+on:
+  workflow_dispatch:
+    inputs:
+      provider:
+        description: "anthropic (GitHub-hosted) or ollama (self-hosted laptop)"
+        default: anthropic
+        type: choice
+        options: [anthropic, ollama]
+      split:
+        description: "Which split to run (dev, test, all)"
+        default: all
+  pull_request:
+    types: [labeled]
+
+concurrency:
+  group: llm-eval
+  cancel-in-progress: false
+
+jobs:
+  eval-anthropic:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.provider == 'anthropic') ||
+      github.event.label.name == 'run-evals'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      LLM_PROVIDER: anthropic
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      LANGSMITH_API_KEY: ${{ secrets.LANGSMITH_API_KEY }}
+      LANGSMITH_TRACING: ${{ secrets.LANGSMITH_API_KEY != '' }}
+      LANGSMITH_PROJECT: recognition-agent-ci
+      NEO4J_URI: ""
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements.txt
+
+      - name: Cache embedding model and search index
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            chroma_db
+          key: embed-${{ hashFiles('data/annotated_results.csv', 'tools/rag_tool.py') }}
+
+      - name: Eval + gate
+        run: python -m evals.run --split ${{ github.event.inputs.split || 'all' }} --name ci-${{ github.run_id }} --gate
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results-${{ github.run_id }}
+          path: evals/results/ci-${{ github.run_id }}/
+
+  eval-ollama:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.provider == 'ollama'
+    runs-on: [self-hosted, ollama]
+    timeout-minutes: 120
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          clean: false  # keep the cached search index between runs
+
+      - name: Bring in the runner's .env (kept outside the repo)
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "$env:RUNNER_ENV_FILE")) { throw "Set RUNNER_ENV_FILE to the path of a .env on the runner machine" }
+          Copy-Item "$env:RUNNER_ENV_FILE" .env -Force
+
+      - name: Ollama is up
+        shell: pwsh
+        run: Invoke-RestMethod http://localhost:11434/api/tags | Out-Null
+
+      - name: Eval + gate
+        run: python -m evals.run --split ${{ github.event.inputs.split || 'all' }} --name ci-${{ github.run_id }} --gate
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results-${{ github.run_id }}
+          path: evals/results/ci-${{ github.run_id }}/

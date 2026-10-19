@@ -1,0 +1,22 @@
+# Secrets
+.env
+
+# Generated data / indexes / caches
+chroma_db/
+data/profile_cache.json
+.cache/
+evals/results/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.ipynb_checkpoints/
+Thumbs.db
+.DS_Store
