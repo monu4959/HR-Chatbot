@@ -48,8 +48,16 @@ jobs:
       - name: Gold answers match the data
         run: |
           python -m evals.build_gold
-          git diff --exit-code -- evals/dataset/ \
-            || (echo "::error::evals/dataset is stale — run 'python -m evals.build_gold' and commit the result" && exit 1)
+          if ! git diff --quiet -- evals/dataset/; then
+            git diff --stat -- evals/dataset/
+            # Put the changed lines into the error annotation, which is readable without opening the log
+            details=$( { git diff --stat -- evals/dataset/ | tail -1
+                         python -c "import hashlib; print('CSV sha256:', hashlib.sha256(open('data/annotated_results.csv','rb').read()).hexdigest()[:16])"
+                         git diff -U0 -- evals/dataset/ | grep -E '^[-+][^-+]' | cut -c1-200 | head -8; } \
+                       | python -c "import sys; print(sys.stdin.read().replace('%','%25').replace('\n','%0A'))" )
+            echo "::error title=evals/dataset is stale::Run 'python -m evals.build_gold' and commit the result.%0A${details}"
+            exit 1
+          fi
 
       - name: Baseline and thresholds are valid
         run: |
