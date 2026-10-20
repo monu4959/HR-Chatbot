@@ -1,0 +1,312 @@
+{
+  "recognition_taxonomy": {
+    "Client & Market Impact": {
+      "id": "A",
+      "description": "Recognition for building strong relationships, understanding client needs, delivering tailored solutions, and fostering lasting partnerships that drive mutual success, as well as for driving activities that directly contribute to market visibility, pipeline generation, revenue growth, and strategic positioning within the industry.",
+      "subcategories": [
+        {
+          "id": "A1",
+          "name": "Client Relationship Building"
+        },
+        {
+          "id": "A2",
+          "name": "Customer Success & Support"
+        },
+        {
+          "id": "A3",
+          "name": "Partnership Development"
+        },
+        {
+          "id": "A4",
+          "name": "Client Solution Delivery"
+        },
+        {
+          "id": "A5",
+          "name": "Market Analysis & Strategy"
+        },
+        {
+          "id": "A6",
+          "name": "Brand & Media Presence"
+        },
+        {
+          "id": "A7",
+          "name": "Pipeline & Revenue Generation"
+        },
+        {
+          "id": "A8",
+          "name": "Competitive Advantage"
+        },
+        {
+          "id": "A9",
+          "name": "Product & Market Expansion"
+        },
+        {
+          "id": "A10",
+          "name": "Client Intelligence & Strategic Alignment"
+        },
+        {
+          "id": "A11",
+          "name": "Community Engagement & Social Impact"
+        }
+      ]
+    },
+    "Strategic Planning & Execution": {
+      "id": "B",
+      "description": "Recognition for the successful planning, coordination, and execution of complex projects, events, campaigns, and strategic programs that achieve organizational objectives, for adapting to dynamic environments, and for providing key strategic foresight.",
+      "subcategories": [
+        {
+          "id": "B1",
+          "name": "Strategy Development & Refinement"
+        },
+        {
+          "id": "B2",
+          "name": "Project & Program Management"
+        },
+        {
+          "id": "B3",
+          "name": "Campaign Execution"
+        },
+        {
+          "id": "B4",
+          "name": "Cross-functional Coordination"
+        },
+        {
+          "id": "B5",
+          "name": "Operational Transformation"
+        },
+        {
+          "id": "B6",
+          "name": "Dynamic Prioritization"
+        },
+        {
+          "id": "B7",
+          "name": "Strategic Resource Management"
+        },
+        {
+          "id": "B8",
+          "name": "Strategic Thought Partnership"
+        }
+      ]
+    },
+    "Governance, Risk & Financial Stewardship": {
+      "id": "C",
+      "description": "Recognition for ensuring robust organizational governance, proactive risk management, compliance with regulations, and sound financial stewardship to protect assets and ensure long-term stability.",
+      "subcategories": [
+        {
+          "id": "C1",
+          "name": "Organizational Policy & Governance"
+        },
+        {
+          "id": "C2",
+          "name": "Risk & Compliance Management"
+        },
+        {
+          "id": "C3",
+          "name": "Financial Management & Controls"
+        },
+        {
+          "id": "C4",
+          "name": "Contract Management & Negotiation"
+        },
+        {
+          "id": "C5",
+          "name": "Benefit Program Management"
+        }
+      ]
+    },
+    "Operational Excellence & Innovation": {
+      "id": "D",
+      "description": "Recognition for streamlining workflows, enhancing internal systems, developing useful resources, and implementing changes that improve productivity, clarity, and overall team functioning, leveraging technology and data integration, and for creatively identifying challenges, developing novel solutions, and implementing improvements that lead to new capabilities or significant advancements.",
+      "subcategories": [
+        {
+          "id": "D1",
+          "name": "Process Optimization & Automation"
+        },
+        {
+          "id": "D2",
+          "name": "System Design & Enhancement"
+        },
+        {
+          "id": "D3",
+          "name": "Data & Technology Integration"
+        },
+        {
+          "id": "D4",
+          "name": "Solution Development & Fostering Innovation"
+        },
+        {
+          "id": "D5",
+          "name": "Knowledge & Self-Service Enablement"
+        }
+      ]
+    },
+    "Core Operational Support & Reliability": {
+      "id": "E",
+      "description": "Recognition for ensuring consistent presence, reliable execution of basic duties, and effective management of day-to-day operations to maintain smooth team functioning, operational continuity, and effective internal information sharing.",
+      "subcategories": [
+        {
+          "id": "E1",
+          "name": "Logistics & Support"
+        },
+        {
+          "id": "E2",
+          "name": "Operational Reliability & Dependability"
+        },
+        {
+          "id": "E3",
+          "name": "Sustained Performance Under Constraint"
+        },
+        {
+          "id": "E4",
+          "name": "Contractual Workflow Management"
+        },
+        {
+          "id": "E5",
+          "name": "Responsive & Proactive Internal Service"
+        }
+      ]
+    },
+    "People Development & Leadership": {
+      "id": "F",
+      "description": "Recognition for acts of leadership, mentorship, and support that foster team growth, individual learning, skill development, and enables effective performance across the organization.",
+      "subcategories": [
+        {
+          "id": "F1",
+          "name": "Mentorship & Coaching"
+        },
+        {
+          "id": "F2",
+          "name": "Onboarding & Integration"
+        },
+        {
+          "id": "F3",
+          "name": "Skill Development & Enablement"
+        },
+        {
+          "id": "F4",
+          "name": "Talent Acquisition & Workforce Growth"
+        },
+        {
+          "id": "F5",
+          "name": "Inter-Leader Collaboration & Skill Building"
+        },
+        {
+          "id": "F6",
+          "name": "Leadership Scalability & Adaptability"
+        },
+        {
+          "id": "F7",
+          "name": "Performance & Development Facilitation"
+        },
+        {
+          "id": "F8",
+          "name": "People Strategy"
+        },
+        {
+          "id": "F9",
+          "name": "Trust-Building & Team Advocacy"
+        }
+      ]
+    },
+    "Culture, Engagement & Wellbeing": {
+      "id": "G",
+      "description": "Recognition for fostering positive, inclusive work environments, strong interpersonal connections, overall employee well-being and engagement, and for channeling collective efforts towards positive internal impact.",
+      "subcategories": [
+        {
+          "id": "G1",
+          "name": "Collaborative Spirit"
+        },
+        {
+          "id": "G2",
+          "name": "Team Cohesion & Morale"
+        },
+        {
+          "id": "G3",
+          "name": "Peer Support & Positive Workplace Culture"
+        },
+        {
+          "id": "G4",
+          "name": "Inclusive Culture Building"
+        },
+        {
+          "id": "G5",
+          "name": "Personalized Employee Experience Design"
+        },
+        {
+          "id": "G6",
+          "name": "Internal Community & Council Leadership"
+        },
+        {
+          "id": "G7",
+          "name": "Personal Inspiration & Role Modeling"
+        },
+        {
+          "id": "G8",
+          "name": "Advocacy & Amplification"
+        },
+        {
+          "id": "G9",
+          "name": "Internal Communication & Engagement"
+        },
+        {
+          "id": "G10",
+          "name": "Acknowledgement of Transition & Future Support"
+        },
+        {
+          "id": "G11",
+          "name": "Milestone & Tenure Recognition"
+        }
+      ]
+    },
+    "Functional & Technical Expertise": {
+      "id": "H",
+      "description": "Recognition for deep, specialized knowledge and its application within a specific functional domain, leading to high-quality outputs and strategic contributions.",
+      "subcategories": [
+        {
+          "id": "H1",
+          "name": "Data Science & Machine Learning Development"
+        },
+        {
+          "id": "H2",
+          "name": "Product Design & User Experience"
+        },
+        {
+          "id": "H3",
+          "name": "Demand & Supply Chain Planning"
+        },
+        {
+          "id": "H4",
+          "name": "Technical Quality & Standards"
+        },
+        {
+          "id": "H5",
+          "name": "Commercial Legal Support"
+        },
+        {
+          "id": "H6",
+          "name": "Data Visualization & Storytelling"
+        },
+        {
+          "id": "H7",
+          "name": "Content Creation & Narrative"
+        },
+        {
+          "id": "H8",
+          "name": "Platform & System Expertise"
+        },
+        {
+          "id": "H9",
+          "name": "Expert Knowledge Sharing"
+        },
+        {
+          "id": "H10",
+          "name": "Strategic Insight Communication"
+        },
+        {
+          "id": "H11",
+          "name": "Operational Data Analysis & Reporting"
+        }
+      ]
+    }
+  }
+}

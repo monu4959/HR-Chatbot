@@ -1,0 +1,156 @@
+{
+  "recognition_taxonomy": {
+    "Collaboration & Teamwork": {
+      "id": "A",
+      "description": "Recognizes individuals for their exceptional contributions to teamwork, fostering a supportive environment, and actively collaborating with others across various functions to achieve shared goals.",
+      "subcategories": [
+        {
+          "id": "A1",
+          "name": "Cross-functional Collaboration"
+        },
+        {
+          "id": "A2",
+          "name": "Teamwork & Mutual Support"
+        },
+        {
+          "id": "A3",
+          "name": "Knowledge Sharing & Mentorship"
+        },
+        {
+          "id": "A4",
+          "name": "Operational Support"
+        },
+        {
+          "id": "A5",
+          "name": "Rapid Response & Support"
+        }
+      ]
+    },
+    "Operational Excellence": {
+      "id": "B",
+      "description": "Recognitions in this category highlight the successful execution of projects, programs, and daily operations, emphasizing efficiency, quality, and the achievement of organizational goals. It often involves overcoming challenges and implementing improvements.",
+      "subcategories": [
+        {
+          "id": "B1",
+          "name": "Quality Deliverables"
+        },
+        {
+          "id": "B2",
+          "name": "Process Improvement"
+        },
+        {
+          "id": "B3",
+          "name": "Efficiency & Productivity"
+        },
+        {
+          "id": "B4",
+          "name": "Project Delivery & Execution"
+        },
+        {
+          "id": "B5",
+          "name": "Automation"
+        },
+        {
+          "id": "B6",
+          "name": "System Integration"
+        },
+        {
+          "id": "B7",
+          "name": "Data Quality & Accuracy"
+        },
+        {
+          "id": "B8",
+          "name": "Sustained High Performance"
+        },
+        {
+          "id": "B9",
+          "name": "High-Quality Execution"
+        },
+        {
+          "id": "B10",
+          "name": "Process Optimization"
+        },
+        {
+          "id": "B11",
+          "name": "Proactive Support & Initiative"
+        },
+        {
+          "id": "B12",
+          "name": "Timely & Accurate Execution"
+        },
+        {
+          "id": "B13",
+          "name": "Project & Program Delivery"
+        },
+        {
+          "id": "B14",
+          "name": "Problem Solving & Resolution"
+        },
+        {
+          "id": "B15",
+          "name": "System Development & Support"
+        },
+        {
+          "id": "B16",
+          "name": "Accessibility"
+        }
+      ]
+    },
+    "Project & Product Delivery": {
+      "id": "C",
+      "description": "Recognition for successfully completing projects, launching new products or features, and driving initiatives from conception to implementation, often involving complex coordination and overcoming challenges.",
+      "subcategories": [
+        {
+          "id": "C1",
+          "name": "Feature Development"
+        },
+        {
+          "id": "C2",
+          "name": "Innovation & Strategic Initiatives"
+        },
+        {
+          "id": "C3",
+          "name": "Vulnerability Management"
+        }
+      ]
+    },
+    "Strategic Business Impact": {
+      "id": "D",
+      "description": "Recognizes contributions that directly drive business growth, achieve key organizational objectives, and enhance market position through strategic planning, execution, and partnerships.",
+      "subcategories": [
+        {
+          "id": "D1",
+          "name": "Business Growth & Development"
+        },
+        {
+          "id": "D2",
+          "name": "Goal Achievement"
+        },
+        {
+          "id": "D3",
+          "name": "Revenue & Pipeline Impact"
+        },
+        {
+          "id": "D4",
+          "name": "Operational Excellence & Process Improvement"
+        },
+        {
+          "id": "D5",
+          "name": "Client/Customer Success & Growth"
+        },
+        {
+          "id": "D6",
+          "name": "Operational Efficiency & Problem Resolution"
+        },
+        {
+          "id": "D7",
+          "name": "Customer Service Excellence"
+        },
+        {
+          "id": "D8",
+          "name": "Client Relationship Management"
+        }
+      ]
+    }
+  }
+}

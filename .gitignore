@@ -20,3 +20,10 @@ venv/
 .ipynb_checkpoints/
 Thumbs.db
 .DS_Store
+
+# Labelling re-runs: raw API responses, per-batch files and outputs stay local
+labelling/output/
+labelling/claude_responses*/
+labelling/taxonomy_results*/taxonomy_batch_*.json
+labelling/taxonomy_results*/taxonomy_checkpoint_*.json
+*.pkl

@@ -1,0 +1,228 @@
+{
+  "recognition_taxonomy": {
+    "Collaboration & Teamwork": {
+      "id": "A",
+      "description": "Recognizes individuals for their exceptional contributions to teamwork, fostering a supportive environment, and actively collaborating with others across various functions to achieve shared goals.",
+      "subcategories": [
+        {
+          "id": "A1",
+          "name": "Cross-functional Collaboration"
+        },
+        {
+          "id": "A2",
+          "name": "Teamwork & Mutual Support"
+        },
+        {
+          "id": "A3",
+          "name": "Knowledge Sharing & Mentorship"
+        },
+        {
+          "id": "A4",
+          "name": "Operational Support"
+        }
+      ]
+    },
+    "Operational Excellence": {
+      "id": "B",
+      "description": "Recognitions in this category highlight the successful execution of projects, programs, and daily operations, emphasizing efficiency, quality, and the achievement of organizational goals. It often involves overcoming challenges and implementing improvements.",
+      "subcategories": [
+        {
+          "id": "B1",
+          "name": "Quality Deliverables"
+        },
+        {
+          "id": "B2",
+          "name": "Process Improvement"
+        },
+        {
+          "id": "B3",
+          "name": "Efficiency & Productivity"
+        },
+        {
+          "id": "B4",
+          "name": "Project Delivery & Execution"
+        },
+        {
+          "id": "B5",
+          "name": "Automation"
+        },
+        {
+          "id": "B6",
+          "name": "Process Improvement & Rollout"
+        },
+        {
+          "id": "B7",
+          "name": "Streamlined Operations"
+        },
+        {
+          "id": "B8",
+          "name": "Data Quality & Accuracy"
+        },
+        {
+          "id": "B9",
+          "name": "Sustained High Performance"
+        },
+        {
+          "id": "B10",
+          "name": "Process Improvement & Accuracy"
+        },
+        {
+          "id": "B11",
+          "name": "Project Delivery & Management"
+        },
+        {
+          "id": "B12",
+          "name": "High-Quality Execution"
+        },
+        {
+          "id": "B13",
+          "name": "Process Optimization"
+        },
+        {
+          "id": "B14",
+          "name": "Project Completion & Quality Deliverables"
+        },
+        {
+          "id": "B15",
+          "name": "Proactive Support & Initiative"
+        },
+        {
+          "id": "B16",
+          "name": "Timely & Accurate Execution"
+        },
+        {
+          "id": "B17",
+          "name": "Project & Program Delivery"
+        },
+        {
+          "id": "B18",
+          "name": "Process Improvement & Efficiency"
+        },
+        {
+          "id": "B19",
+          "name": "Problem Solving & Resolution"
+        },
+        {
+          "id": "B20",
+          "name": "System Development & Support"
+        },
+        {
+          "id": "B21",
+          "name": "Operational Support"
+        },
+        {
+          "id": "B22",
+          "name": "System Integration"
+        },
+        {
+          "id": "B23",
+          "name": "Accessibility"
+        }
+      ]
+    },
+    "Project & Product Delivery": {
+      "id": "C",
+      "description": "Recognition for successfully completing projects, launching new products or features, and driving initiatives from conception to implementation, often involving complex coordination and overcoming challenges.",
+      "subcategories": [
+        {
+          "id": "C1",
+          "name": "Feature Development"
+        },
+        {
+          "id": "C2",
+          "name": "Innovation & Strategic Initiatives"
+        },
+        {
+          "id": "C3",
+          "name": "Problem Solving & Resolution"
+        },
+        {
+          "id": "C4",
+          "name": "Project Delivery & Execution"
+        },
+        {
+          "id": "C5",
+          "name": "Vulnerability Management"
+        }
+      ]
+    },
+    "Strategic Business Impact": {
+      "id": "D",
+      "description": "Recognizes contributions that directly drive business growth, achieve key organizational objectives, and enhance market position through strategic planning, execution, and partnerships.",
+      "subcategories": [
+        {
+          "id": "D1",
+          "name": "Business Growth & Development"
+        },
+        {
+          "id": "D2",
+          "name": "Goal Achievement"
+        },
+        {
+          "id": "D3",
+          "name": "Project Leadership & Delivery"
+        },
+        {
+          "id": "D4",
+          "name": "Revenue & Pipeline Impact"
+        },
+        {
+          "id": "D5",
+          "name": "Project & Program Completion"
+        },
+        {
+          "id": "D6",
+          "name": "Operational Excellence & Process Improvement"
+        },
+        {
+          "id": "D7",
+          "name": "Client/Customer Success & Growth"
+        },
+        {
+          "id": "D8",
+          "name": "Project Execution & Delivery"
+        },
+        {
+          "id": "D9",
+          "name": "Project Delivery & Execution"
+        },
+        {
+          "id": "D10",
+          "name": "Operational Efficiency & Problem Resolution"
+        },
+        {
+          "id": "D11",
+          "name": "Problem-Solving & Innovation"
+        },
+        {
+          "id": "D12",
+          "name": "Project & Program Delivery"
+        }
+      ]
+    },
+    "Customer & Client Success": {
+      "id": "E",
+      "description": "Recognizes actions that directly enhance customer satisfaction, build strong client relationships, or effectively resolve external challenges, ultimately contributing to positive external stakeholder experiences.",
+      "subcategories": [
+        {
+          "id": "E1",
+          "name": "Customer Service Excellence"
+        },
+        {
+          "id": "E2",
+          "name": "Client Relationship Management"
+        }
+      ]
+    },
+    "Responsive Support": {
+      "id": "F",
+      "description": "Recognition for providing quick, efficient, and readily available assistance that addresses immediate needs and keeps operations running smoothly or prevents issues.",
+      "subcategories": [
+        {
+          "id": "F1",
+          "name": "Rapid Response & Support"
+        }
+      ]
+    }
+  }
+}

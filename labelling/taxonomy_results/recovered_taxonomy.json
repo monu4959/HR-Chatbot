@@ -1,0 +1,267 @@
+{
+  "recognition_taxonomy": {
+    "Strategic Business Impact": {
+      "description": "Recognizes contributions that directly drive business growth, achieve key organizational objectives, and enhance market position through strategic planning, execution, and partnerships.",
+      "subcategories": [
+        "Business Development & Growth",
+        "Market & Customer Acquisition"
+      ]
+    },
+    "Operational Excellence & Efficiency": {
+      "description": "Recognizing individuals or teams for streamlining processes, improving productivity, reducing costs, and enhancing the effectiveness of daily operations through innovation, problem-solving, and meticulous execution.",
+      "subcategories": [
+        "Process Improvement",
+        "Process Improvement & Rollout",
+        "Streamlined Operations",
+        "Data Quality & Accuracy",
+        "Process Improvement & Simplification",
+        "Sustained High Performance",
+        "Process Improvement & Accuracy",
+        "Project Delivery & Management",
+        "High-Quality Execution",
+        "Process Optimization",
+        "Project Completion & Quality Deliverables",
+        "Proactive Support & Initiative",
+        "Timely & Accurate Execution"
+      ]
+    },
+    "Project & Product Delivery": {
+      "description": "Recognition for successfully completing projects, launching new products or features, and driving initiatives from conception to implementation, often involving complex coordination and overcoming challenges.",
+      "subcategories": [
+        "Successful Launch & Implementation"
+      ]
+    },
+    "Driving Strategic Outcomes": {
+      "description": "Recognitions for achieving significant business results, advancing key initiatives, or delivering high-impact projects that directly contribute to organizational goals.",
+      "subcategories": [
+        "Project Leadership & Delivery",
+        "Business Growth & Expansion"
+      ]
+    },
+    "Product & Solution Delivery": {
+      "description": "Recognition for contributions to the creation, enhancement, and innovation of products, services, and core technical solutions.",
+      "subcategories": [
+        "Feature Development & Design",
+        "Technical Innovation & Problem Solving",
+        "Strategic Product Initiatives"
+      ]
+    },
+    "Driving Business & Strategic Impact": {
+      "description": "Recognitions for individuals or teams who directly contribute to significant business outcomes, strategic objectives, or market positioning through their work.",
+      "subcategories": [
+        "Problem-Solving & Innovation",
+        "Project & Program Delivery"
+      ]
+    },
+    "Operational Excellence & Project Success": {
+      "description": "Recognitions in this category highlight the successful execution of projects, programs, and daily operations, emphasizing efficiency, quality, and the achievement of organizational goals. It often involves overcoming challenges and implementing improvements.",
+      "subcategories": []
+    },
+    "Operational Excellence & Project Execution": {
+      "description": "Recognizing individuals or teams for their exceptional ability to manage and execute projects, deliver high-quality work, solve complex operational challenges, and ensure smooth, efficient functioning of processes and systems.",
+      "subcategories": []
+    },
+    "Driving Business Impact": {
+      "description": "Recognitions highlighting direct contributions to achieving business goals, delivering key results, or overcoming significant challenges to advance organizational objectives.",
+      "subcategories": [
+        "Achieving Project Milestones & Deliverables",
+        "Influencing Revenue & Pipeline Growth"
+      ]
+    },
+    "Strategic Impact & Innovation": {
+      "description": "Recognizing contributions that drive business growth, achieve critical organizational goals, and foster future-oriented solutions.",
+      "subcategories": [
+        "Business Growth & Visibility",
+        "Project Success & Goal Achievement"
+      ]
+    },
+    "Exceptional Contribution to Projects & Deliverables": {
+      "description": "Recognizing individuals for their significant impact on project success, meeting critical deadlines, and delivering high-quality, impactful work that drives business objectives.",
+      "subcategories": [
+        "Project Management & Coordination"
+      ]
+    },
+    "Collaboration & Teamwork": {
+      "description": "Recognizing individuals for their effective partnership, shared effort, and contributions that strengthen team dynamics and achieve collective goals.",
+      "subcategories": [
+        "Cross-functional Collaboration",
+        "Mutual Support & Assistance"
+      ]
+    },
+    "Impactful Project & Task Execution": {
+      "description": "Recognition for successfully completing projects, delivering key tasks, solving problems, and achieving significant outcomes within specific initiatives or ongoing responsibilities.",
+      "subcategories": [
+        "Strategic Project Delivery",
+        "Problem Solving & Innovation"
+      ]
+    },
+    "Driving Business Outcomes": {
+      "description": "Recognizes significant contributions that directly impact organizational success, operational efficiency, and the achievement of strategic goals.",
+      "subcategories": [
+        "Project & Program Completion",
+        "Operational Excellence & Process Improvement",
+        "Client/Customer Success & Growth"
+      ]
+    },
+    "Operational Excellence": {
+      "description": "Recognizing individuals for their consistent ability to deliver high-quality work, solve problems efficiently, and ensure the smooth and effective functioning of critical systems and processes.",
+      "subcategories": [
+        "Quality and Detail Orientation",
+        "Process Improvement",
+        "Efficiency & Productivity"
+      ]
+    },
+    "Operational Excellence & Innovation": {
+      "description": "Recognizing impactful contributions that enhance efficiency, resolve complex problems, drive strategic initiatives, and foster new solutions or knowledge management.",
+      "subcategories": [
+        "Process Improvement & Efficiency",
+        "Problem Resolution & Troubleshooting"
+      ]
+    },
+    "Driving Operational Excellence": {
+      "description": "Recognizes individuals or teams for their direct contributions to improving efficiency, reliability, and effectiveness of business processes and systems, often leading to tangible improvements in how work gets done.",
+      "subcategories": [
+        "Process Improvement"
+      ]
+    },
+    "Collaboration & Partnership": {
+      "description": "Recognizes individuals or teams for their effective teamwork, cross-functional collaboration, and mutual support that leads to shared success and goal achievement.",
+      "subcategories": [
+        "Cross-functional Partnership",
+        "Teamwork and Mutual Support",
+        "Teamwork & Cooperation"
+      ]
+    },
+    "Collaboration and Support": {
+      "description": "Recognizing individuals who actively assist colleagues, foster teamwork, and provide essential guidance, significantly contributing to shared goals and a supportive work environment.",
+      "subcategories": [
+        "Teamwork and Mutual Aid",
+        "Mentorship and Knowledge Sharing"
+      ]
+    },
+    "Operational Excellence & Impact": {
+      "description": "Recognition for exceptional contributions to projects, problem resolution, process improvements, and achieving critical business objectives, demonstrating a high level of expertise and dedication.",
+      "subcategories": [
+        "Project Completion & Delivery",
+        "Project & Program Delivery",
+        "Process Improvement & Efficiency"
+      ]
+    },
+    "Operational Excellence & Support": {
+      "description": "Recognitions for consistently delivering high-quality work, ensuring smooth operations, and providing essential support that enables others to succeed and maintains business continuity.",
+      "subcategories": [
+        "Issue Resolution & Problem Solving"
+      ]
+    },
+    "Customer & Client Success": {
+      "description": "Recognizes actions that directly enhance customer satisfaction, build strong client relationships, or effectively resolve external challenges, ultimately contributing to positive external stakeholder experiences.",
+      "subcategories": [
+        "Exceptional Service Delivery",
+        "Client Relationship Management"
+      ]
+    },
+    "Driving Operational Excellence & Efficiency": {
+      "description": "Recognizing actions that streamline processes, improve systems, ensure smooth operations, save resources, or deliver higher quality and more efficient outcomes for the organization.",
+      "subcategories": [
+        "Process Improvement & Optimization",
+        "System Development & Support"
+      ]
+    },
+    "Operational Excellence & Project Achievement": {
+      "description": "Recognizing employees for exceptional contributions to projects, consistent operational effectiveness, and the successful completion of critical tasks or initiatives.",
+      "subcategories": [
+        "Project Completion & Delivery",
+        "Process Improvement & Optimization"
+      ]
+    },
+    "Driving Business & Project Outcomes": {
+      "description": "Recognition for direct contributions that advance company objectives, complete projects, or significantly impact key initiatives and user experiences.",
+      "subcategories": [
+        "Contribution to Strategic Goals",
+        "Project Execution & Delivery"
+      ]
+    },
+    "Collaborative Support & Partnership": {
+      "description": "Recognition for actively working with others, providing assistance, fostering teamwork, and building effective relationships to achieve shared goals.",
+      "subcategories": [
+        "Cross-functional Collaboration",
+        "Teamwork & Mutual Aid",
+        "Covering tasks and projects"
+      ]
+    },
+    "Timely & Responsive Support": {
+      "description": "Recognition for providing quick, efficient, and readily available assistance that addresses immediate needs and keeps operations running smoothly or prevents issues.",
+      "subcategories": [
+        "Speedy Resolution",
+        "Prompt Action",
+        "Urgent Assistance"
+      ]
+    },
+    "Operational Excellence & Delivery": {
+      "description": "Recognition for efficiently and effectively executing tasks, projects, and systems, ensuring smooth operations, high-quality output, and proactive problem resolution.",
+      "subcategories": [
+        "Project Delivery & Execution",
+        "Process Improvement & Automation"
+      ]
+    },
+    "Team & Cross-Functional Collaboration": {
+      "description": "Recognizes individuals for their exceptional contributions to teamwork, fostering a supportive environment, and actively collaborating with others across various functions to achieve shared goals.",
+      "subcategories": [
+        "Mutual Support & Coverage",
+        "Cross-functional Assistance"
+      ]
+    },
+    "Project and Initiative Advancement": {
+      "description": "Recognition for contributions that propel strategic projects, product development, or key organizational initiatives forward, often involving planning, execution, or innovation.",
+      "subcategories": [
+        "Vulnerability Reduction",
+        "Strategic Planning & Alignment"
+      ]
+    },
+    "Operational Excellence & Project Delivery": {
+      "description": "Recognizing individuals for their effective and efficient execution of tasks, projects, and initiatives, leading to high-quality outputs and successful outcomes.",
+      "subcategories": [
+        "Timely Task Completion",
+        "Quality Deliverables"
+      ]
+    },
+    "Operational Efficiency & Problem Resolution": {
+      "description": "Recognizes contributions that streamline processes, resolve issues, and ensure smooth day-to-day operations and system stability.",
+      "subcategories": [
+        "System Maintenance & Troubleshooting",
+        "Process Improvement",
+        "Administrative Support"
+      ]
+    },
+    "Operational Excellence & Problem Resolution": {
+      "description": "Recognizes contributions that lead to efficient operations, successful project delivery, and effective resolution of challenges, ensuring smooth functioning and achievement of goals.",
+      "subcategories": [
+        "Project Delivery",
+        "Process Improvement",
+        "Issue Resolution"
+      ]
+    },
+    "Driving Business & Operational Outcomes": {
+      "description": "Recognition for significant contributions that directly advance business goals, improve operational efficiency, or successfully deliver key projects and initiatives.",
+      "subcategories": [
+        "Project Delivery & Milestones",
+        "Operational Efficiency & Problem Resolution"
+      ]
+    },
+    "Work & Project Contribution": {
+      "description": "Recognitions for direct involvement, efforts, and successful outcomes in projects, tasks, or core responsibilities that drive business objectives.",
+      "subcategories": [
+        "Project Delivery & Milestones",
+        "Problem Solving & Issue Resolution"
+      ]
+    },
+    "Operational Support & Problem Solving": {
+      "description": "Acknowledging individuals who provide critical technical assistance, resolve specific issues, or contribute to the smooth functioning of systems and processes.",
+      "subcategories": [
+        "Technical Troubleshooting",
+        "System Integration/Sync",
+        "Accessibility Support"
+      ]
+    }
+  }
+}
