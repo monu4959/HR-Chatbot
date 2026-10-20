@@ -1,0 +1,17 @@
+# Secrets and local state never go into the image
+.env
+.cache/
+chroma_db/
+data/profile_cache.json
+evals/results/
+
+# Not needed at run time
+.git/
+.github/
+evals/
+labelling/
+tests/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+*.pkl

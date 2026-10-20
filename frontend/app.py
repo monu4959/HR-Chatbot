@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_URL   = "http://localhost:8000"
+API_URL   = os.getenv("API_URL", "http://localhost:8000")  # the UI container points this at the API container
 DATA_PATH = os.getenv("DATA_PATH", "./data/annotated_results.csv")
 
 st.set_page_config(
